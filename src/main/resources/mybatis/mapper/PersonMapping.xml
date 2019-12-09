@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sun.demo_springboot.dao.PersonMapper">
+    <resultMap id="person" type="com.sun.demo_springboot.pojo.Person">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="create_datetime" jdbcType="VARCHAR" property="createTime"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="sex" jdbcType="VARCHAR" property="sex"/>
+        <result column="username" jdbcType="VARCHAR" property="userName"/>
+        <result column="zone" jdbcType="VARCHAR" property="zone"/>
+    </resultMap>
+    <sql id="personColumn">
+        id,create_datetime,email,phone,sex,username,zone
+    </sql>
+    <select id="findAll" resultMap="person">
+        select <include refid="personColumn"/>
+        from persons
+    </select>
+</mapper>

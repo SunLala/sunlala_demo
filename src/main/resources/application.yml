@@ -1,0 +1,20 @@
+
+mybatis:
+    config-location: classpath:mybatis/mybatis.cfg.xml
+    mapper-locations: classpath:mybatis/mapper/*.xml
+    type-aliases-package: com.sun.demo_springboot.pojo
+server:
+    port: 8388
+#    ssl:
+#      key-store: classpath:keystore.p12
+#      key-password: 111111
+#      key-store-type: PKCS12
+#      key-alias: tomcat
+spring:
+    application:
+        name: demo_springboot_vue
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: huatek@123
+        url: jdbc:mysql://192.168.145.27:3306/sun_test?characterEncoding=utf8&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        username: root
